@@ -24,7 +24,7 @@ IDE: PyCharm
 
 라이브러리: Pico2d
 
-<img width="2048" height="2048" alt="Gemini_Generated_Image_cws2wccws2wccws2" src="https://github.com/user-attachments/assets/ab89dc06-124a-4177-b790-61741e1c99c4" />
+<img width="1024" height="1024" alt="Gemini_Generated_Image_cws2wccws2wccws2" src="https://github.com/user-attachments/assets/ab89dc06-124a-4177-b790-61741e1c99c4" />
 
 
 --나중에 수정--
