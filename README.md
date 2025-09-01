@@ -14,7 +14,7 @@
 본 프로젝트는 2D 게임 프로그래밍의 기본적인 개념을 이해하고, Python과 Pico2d를 활용하여 실제로 게임을 만들어보는 것을 목표로 합니다. 간단한 게임 로직 구현부터 시작하여 객체 지향 프로그래밍, 이벤트 처리, 그래픽 렌더링 등 게임 개발에 필요한 다양한 기술을 학습하고 적용합니다.
 
 =====개발 환경======
-
+<img width="256" height="256" alt="Gemini_Generated_Image_cws2wccws2wccws2" src="https://github.com/user-attachments/assets/ab89dc06-124a-4177-b790-61741e1c99c4" />
 
 언어: Python 3.x
 
@@ -23,8 +23,6 @@ IDE: PyCharm
 
 
 라이브러리: Pico2d
-
-<img width="512" height="512" alt="Gemini_Generated_Image_cws2wccws2wccws2" src="https://github.com/user-attachments/assets/ab89dc06-124a-4177-b790-61741e1c99c4" />
 
 
 --나중에 수정--
