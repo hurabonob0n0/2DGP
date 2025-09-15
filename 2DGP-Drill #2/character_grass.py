@@ -6,30 +6,30 @@ open_canvas()
 grass = load_image('grass.png')
 character = load_image('character.png')
 
-gab = 50
+gab = 90
 x = 400
-y = 9
+y = gab
 state = 0
 square = True
 radian = 0
-speed = 7.5
+speed = 20
 
 def move_square():
     global  x,y,state,square
     if (state == 0):
         x = x + speed
-        if(x >= 800 - gab):
-            x = 800- gab
+        if(x >= 800 - gab / 5):
+            x = 800- gab / 5
             state = 1
     elif (state == 1):
         y = y + speed
-        if(y >= 600- gab):
-            y = 600- gab
+        if(y >= 600- gab/1.5):
+            y = 600- gab/1.5
             state = 2
     elif (state == 2):
         x = x - speed
-        if(x <= 0+ gab):
-            x = 0+ gab
+        if(x <= 0+ gab / 5):
+            x = 0+ gab / 5
             state = 3
     elif (state == 3):
         y = y - speed
@@ -45,17 +45,18 @@ def move_square():
 
 
 def move_circle():
-    global x,y,state,square,radian
+    global x, y, square, radian
 
-    x = math.cos(radian) * 390 + 400
-    y = math.sin(radian) * 290 + 300
-    radian += 0.075
-    if(radian >= 2*3.14):
+    x = math.cos(radian - math.pi / 2) * 250 + 400
+    y = math.sin(radian - math.pi / 2) * 250 + 330
+    radian += 0.075 * 2
+
+    if radian >= 2 * math.pi:
         square = True
         radian = 0
         state = 0
         x = 400
-        y =  gab
+        y = gab
 
 
 while (True):
