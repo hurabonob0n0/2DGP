@@ -48,6 +48,40 @@ def move_circle():
         y = 300 + math.sin(math.radians(angle-90)) * 280
         render(x,y)
 
+
+def move_Right_to_Top_Middle():
+    print('Moving right to top-middle')
+    x1, y1 = 780, 40
+    x2, y2 = 400, 560
+
+    for i in range(0, 100, 2):
+        t = i / 100
+        x = (1 - t) * x1 + t * x2
+        y = (1 - t) * y1 + t * y2
+        render(x, y)
+
+# 위쪽 중앙 -> 왼쪽 아래
+def move_Top_Middle_to_Left():
+    print('Moving top-middle to left')
+    x1, y1 = 400, 560
+    x2, y2 = 20, 40
+
+    for i in range(0, 100, 2):
+        t = i / 100
+        x = (1 - t) * x1 + t * x2
+        y = (1 - t) * y1 + t * y2
+        render(x, y)
+
+
+def move_triangle():
+    move_bottomR()
+    move_Right_to_Top_Middle()
+    move_Top_Middle_to_Left()
+    move_bottomL()
+
+
+
 while(True):
     move_rectangle()
+    move_triangle()
     move_circle()
