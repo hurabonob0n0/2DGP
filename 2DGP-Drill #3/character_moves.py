@@ -9,7 +9,7 @@ grass = load_image('grass.png')
 def render(x,y):
     clear_canvas_now()
     boy.draw_now(x,y)
-    delay(0.1)
+    delay(0.016)
 
 
 def move_rectangle():
@@ -20,7 +20,10 @@ def move_rectangle():
 
 def move_circle():
     print('Moving circle')
-    render(400, 300)
+    for angle in range(0,360,1):
+        x = 400 + math.cos(math.radians(angle)) * 280
+        y = 300 + math.sin(math.radians(angle)) * 280
+        render(x,y)
     pass
 
 
