@@ -1,16 +1,18 @@
 from pico2d import *
+import random
 
 open_canvas(400,800)
 
 class ball():
     def __init__(self):
         self.image = load_image('ball41x41.png')
+        self.x, self.y = random.randint(100,300) , 599
 
     def updaate(self):
         pass
 
     def render(self):
-        self.image.draw(100,100)
+        self.image.draw(self.x, self.y)
 
 def handle_events():
     global running
