@@ -1,18 +1,27 @@
 from pico2d import *
 import random
 
-open_canvas(400,800)
+open_canvas(800,800)
 
 class ball():
     def __init__(self):
         self.image = load_image('ball41x41.png')
-        self.x, self.y = random.randint(100,300) , 599
+        self.x, self.y = random.randint(100,900) , 599
+        self.size = random.randint(20,80)
+        self.yspeed = 0
+        self.gravity = random.uniform(0.1,2.0)
+        self.onGround = False
 
-    def updaate(self):
-        pass
+    def update(self):
+        if self.y > self.size / 2:
+            self.yspeed -= self.gravity
+            self.y += self.yspeed
+        else:
+            self.y = self.size / 2
+            self.onGround = True
 
     def render(self):
-        self.image.draw(self.x, self.y)
+        self.image.draw(self.x, self.y,self.size,self.size)
 
 def handle_events():
     global running
@@ -25,12 +34,14 @@ def handle_events():
                 running = False
 
 running = True
-balls = [ball() for _ in range(5)]
+balls = [ball() for _ in range(20)]
 
 while running:
     handle_events()
     clear_canvas()
     for ball in balls:
+        if ball.onGround is False:
+            ball.update()
         ball.render()
     update_canvas()
     delay(0.016)
